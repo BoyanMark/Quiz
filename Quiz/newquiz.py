@@ -7,12 +7,12 @@ from string import ascii_lowercase
 
 NUMBER_OF_QUESTIONS_ASKED = 9
 QUESTIONS_PATH = pathlib.Path(__file__).parent / "questions.toml"
-QUESTIONS = tomllib.loads(QUESTIONS_PATH.read_text())
 
 
-def prepare_questions(questions, number_of_questions):
+def prepare_questions(path, number_of_questions):
+    questions = tomllib.loads(path.read_text())["questions"]
     number_of_questions = min(number_of_questions, len(questions))
-    return random.sample(list(questions.items()), k=number_of_questions)
+    return random.sample(questions, k=number_of_questions)
 
 
 def get_answer(question, choices):
@@ -25,10 +25,11 @@ def get_answer(question, choices):
     return lettered_choices[answer_letter]
 
 
-def ask_question(question, choices):
-    correct_answer = choices[0]
+def ask_question(question):
+    correct_answer = question["answer"]
+    choices = [question["answer"]] + question["choices"]
     ordered_choices = random.sample(choices, k=len(choices))
-    answer = get_answer(question, ordered_choices)
+    answer = get_answer(question["question"], ordered_choices)
     if answer == correct_answer:
         print("⭐ Correct! ⭐")
         return True
@@ -38,11 +39,11 @@ def ask_question(question, choices):
 
 
 def run_test():
-    questions = prepare_questions(QUESTIONS, number_of_questions=NUMBER_OF_QUESTIONS_ASKED)
+    questions = prepare_questions(QUESTIONS_PATH, number_of_questions=NUMBER_OF_QUESTIONS_ASKED)
     correct_answers = 0
-    for num, (questions, choices) in enumerate(questions, start=1):
+    for num, question in enumerate(questions, start=1):
         print(f"\nQuestion {num}:")
-        correct_answers += ask_question(questions, choices)
+        correct_answers += ask_question(question)
     print(f"\nYou have {correct_answers} correct answers from {num} questions.")
 
 
