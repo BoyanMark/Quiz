@@ -4,7 +4,6 @@ import pathlib
 import random
 from string import ascii_lowercase
 
-
 NUMBER_OF_QUESTIONS_ASKED = 9
 QUESTIONS_PATH = pathlib.Path(__file__).parent / "questions.toml"
 
@@ -15,27 +14,38 @@ def prepare_questions(path, number_of_questions):
     return random.sample(questions, k=number_of_questions)
 
 
-def get_answer(question, choices):
+def get_answers(question, choices, number_of_choices=1):
     print(f"{question}?")
     lettered_choices = dict(zip(ascii_lowercase, choices))
     for letter, choice in lettered_choices.items():
         print(f"  {letter}) {choice}")
-    while (answer_letter := input("\nChoice? ")) not in lettered_choices:
-        print(f"Please answer one of {', '.join(lettered_choices)}")
-    return lettered_choices[answer_letter]
+    while True:
+        multiple = "" if number_of_choices == 1 else f"s (choose {number_of_choices})"
+        answer = input(f"\nChoice{multiple}? ")
+        answers = set(answer.replace(",", " ").split())
+        if len(answers) != number_of_choices:
+            multiple = "" if number_of_choices == 1 else "s, separated by coma"
+            print(f"Please answer {number_of_choices} alternative{multiple}")
+            continue
+        if any((invalid := answer) not in lettered_choices for answer in answers):
+            print(f"{invalid!r} is not a valid choice. \nPlease use {', '.join(lettered_choices)}")
+            continue
+        return [lettered_choices[answer] for answer in answers]
 
 
 def ask_question(question):
-    correct_answer = question["answer"]
-    choices = [question["answer"]] + question["choices"]
+    correct_answers = question["answers"]
+    choices = question["answers"] + question["choices"]
     ordered_choices = random.sample(choices, k=len(choices))
-    answer = get_answer(question["question"], ordered_choices)
-    if answer == correct_answer:
+    answers = get_answers(question=question["question"], choices=ordered_choices,
+                          number_of_choices=len(correct_answers),
+                          )
+    if correct := (set(answers) == set(correct_answers)):
         print("⭐ Correct! ⭐")
-        return True
     else:
-        print(f"The correct answer is {correct_answer!r}, not {answer!r}")
-        return False
+        is_or_are = " is" if len(correct_answers) == 1 else "s are"
+        print(f"The correct answer{is_or_are}: {correct_answers!r}.")
+    return True if correct else False
 
 
 def run_test():
