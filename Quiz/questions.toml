@@ -1,70 +1,134 @@
-[[questions]]
+[python]
+label = "Python"
+
+[[python.questions]]
 question = "What's one effect of calling random.seed(42)"
 answers = ["The random numbers are reproducible."]
 choices = ["The random numbers are more random.",
     "The computer clock is reset.",
     "The first random number is always 42."]
 
-[[questions]]
+[[python.questions]]
 question = "When does __name__ == '__main__' equal True in a Python file"
 answers = ["When the file is run as a script"]
 choices = ["When the file is imported as a module",
     "When the file has a valid name",
     "When the file only has one function"]
 
-[[questions]]
+[[python.questions]]
 question = "What's the purpose of the built-in zip() function"
 answers = ["To iterate over two or more sequences at the same time"]
 choices = ["To combine several strings into one",
     "To compress several files into one archive",
     "To get information from the user"]
 
-[[questions]]
+[[python.questions]]
 question = "What's the name of Python's sorting algorithm"
 answers = ["Timsort"]
 choices = ["Quicksort", "Merge sort", "Bubble sort"]
 
-[[questions]]
+[[python.questions]]
 question = "What's the official name of the := operator"
 answers = ["Assignment expression"]
 choices = ["Named expression",
     "Walrus operator",
     "Colon equals operator"]
 
-[[questions]]
+[[python.questions]]
 question = "What does dict.get(key) return if key isn't found in dict"
 answers = ["None"]
 choices = ["key", "True", "False"]
 
-[[questions]]
+[[python.questions]]
 question = "Which keyword do you use to loop over a given list of elements"
 answers = ["for"]
 choices = ["while", "each", "loop"]
 
-[[questions]]
+[[python.questions]]
 question = "Which built-in function can get information from the user"
 answers = ["input"]
 choices = ["get", "print", "write"]
 
-[[questions]]
+[[python.questions]]
 question = "When was the first known use of the word 'quiz'"
 answers = ["1781"]
 choices = ["1771", "1871", "1881"]
 
-[[questions]]
+[[python.questions]]
 question = "How do you iterate over both indices and elements in an iterable"
 answers = ["enumerate(iterable)"]
 choices = ["enumerate(iterable, start=1)",
     "range(iterable)",
     "range(iterable, start=1)",]
 
-[[questions]]
+[[python.questions]]
 question = "Which version of Python is the first with TOML support built in"
 answers = ["3.11"]
 choices = ["3.9", "3.10", "3.12"]
 
-[[questions]]
+[[python.questions]]
 question = "How can you run a Python script named quiz.py"
 answers = ["python quiz.py", "python -m quiz"]
 choices = ["python quiz", "python -m quiz.py"]
 
+[[python.questions]]
+question = "What's a PEP"
+answers = ["A Python Enhancement Proposal"]
+choices = ["A Pretty Exciting Policy",
+    "A Preciously Evolved Python",
+    "A Potentially Epic Prize"
+]
+
+
+[history]
+label = "History"
+
+[[history.questions]]
+question = "How many wives did Henry VIII have?"
+answers = ["6"]
+choices = ["1", "2", "4"]
+
+[[history.questions]]
+question = "Francisco Franco ruled which European country from 1939 to 1975?"
+answers = ["Spain"]
+choices = ["France", "Italy", "England"]
+
+[[history.questions]]
+question = "What type of boats did the Vikings use when exploring and raiding?"
+answers = ["Longships"]
+choices = ["Triremes", "Galeons", "Frigates"]
+
+[[history.questions]]
+question = "Which country did Germany invade to kickstart World War II?"
+answers = ["Poland"]
+choices = ["France", "Russia", "Belgium"]
+
+[[history.questions]]
+question = "What language was spoken in Ancient Rome?"
+answers = ["Latin"]
+choices = ["Roman", "Italian", "Greek"]
+
+[[history.questions]]
+question = "When"
+answers = ["300bc"]
+choices = ["200bc", "100bc", "00ad"]
+
+[[history.questions]]
+question = "In Ancient Rome, what was a thermae?"
+answers = ["Public baths"]
+choices = ["Public toilets", "Bakery", "Heating station"]
+
+[[history.questions]]
+question = "Who is said to be so beautiful that her face launched a thousand ships?"
+answers = ["Helen of Troy"]
+choices = ["Maria Tereza", "Joan of Arc", "Mona Liza"]
+
+[[history.questions]]
+question = "Which 3 countries made up the Triple Entente in World War I?"
+answers = ["Great Britain", "France", "Russia"]
+choices = ["Germany", "Italy", "Japan"]
+
+[[history.questions]]
+question = "In what year did the Berlin Wall fall?"
+answers = ["1989"]
+choices = ["1981", "1988", "1986"]
