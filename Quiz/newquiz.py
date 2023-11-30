@@ -4,7 +4,7 @@ import pathlib
 import random
 from string import ascii_lowercase
 
-NUMBER_OF_QUESTIONS_ASKED = 9
+NUMBER_OF_QUESTIONS_ASKED = 5
 QUESTIONS_PATH = pathlib.Path(__file__).parent / "questions.toml"
 
 

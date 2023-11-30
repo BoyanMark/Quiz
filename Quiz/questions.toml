@@ -84,51 +84,51 @@ choices = ["A Pretty Exciting Policy",
 label = "History"
 
 [[history.questions]]
-question = "How many wives did Henry VIII have?"
+question = "How many wives did Henry VIII have"
 answers = ["6"]
 choices = ["1", "2", "4"]
 
 [[history.questions]]
-question = "Francisco Franco ruled which European country from 1939 to 1975?"
+question = "Francisco Franco ruled which European country from 1939 to 1975"
 answers = ["Spain"]
 choices = ["France", "Italy", "England"]
 
 [[history.questions]]
-question = "What type of boats did the Vikings use when exploring and raiding?"
+question = "What type of boats did the Vikings use when exploring and raiding"
 answers = ["Longships"]
 choices = ["Triremes", "Galeons", "Frigates"]
 
 [[history.questions]]
-question = "Which country did Germany invade to kickstart World War II?"
+question = "Which country did Germany invade to kickstart World War II"
 answers = ["Poland"]
 choices = ["France", "Russia", "Belgium"]
 
 [[history.questions]]
-question = "What language was spoken in Ancient Rome?"
+question = "What language was spoken in Ancient Rome"
 answers = ["Latin"]
 choices = ["Roman", "Italian", "Greek"]
 
 [[history.questions]]
-question = "When"
-answers = ["300bc"]
-choices = ["200bc", "100bc", "00ad"]
+question = "The War of the Roses was fought between which 2 royal houses"
+answers = ["House of York", "House of Lancaster"]
+choices = ["House of Stark", "House of Lannister", "House of Baratheon"]
 
 [[history.questions]]
-question = "In Ancient Rome, what was a thermae?"
+question = "In Ancient Rome, what was a thermae"
 answers = ["Public baths"]
 choices = ["Public toilets", "Bakery", "Heating station"]
 
 [[history.questions]]
-question = "Who is said to be so beautiful that her face launched a thousand ships?"
+question = "Who is said to be so beautiful that her face launched a thousand ships"
 answers = ["Helen of Troy"]
 choices = ["Maria Tereza", "Joan of Arc", "Mona Liza"]
 
 [[history.questions]]
-question = "Which 3 countries made up the Triple Entente in World War I?"
+question = "Which 3 countries made up the Triple Entente in World War I"
 answers = ["Great Britain", "France", "Russia"]
 choices = ["Germany", "Italy", "Japan"]
 
 [[history.questions]]
-question = "In what year did the Berlin Wall fall?"
+question = "In what year did the Berlin Wall fall"
 answers = ["1989"]
 choices = ["1981", "1988", "1986"]
